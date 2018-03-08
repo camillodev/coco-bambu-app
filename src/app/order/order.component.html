@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-sm navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    <img class="logo" src="/assets/images/logo-coco-bambu-mini.png" alt="Coco Bambu">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto w-100 justify-content-end">
+      <li class="nav-item">
+        <div class="form-inline">
+          <input class="form-control search" [(ngModel)]='listFilter' type="text" placeholder="Search" aria-label="Search">
+          <div class="btn-search">
+            <i class="icon icon-search"></i>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/order']">Pedidos
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/acess']">Receitas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/acess']">Sair</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <h2 class="title">Ultimos Pedidos</h2>
+  <div class="order-container">
+    <div class="row order-item" *ngFor="let order of filteredOrders">
+      <div class="col-3 b">
+        <img [src]="order?.recipe?.imageUrl.small" [alt]="order?.recipe?.title" class="img-fluid order-img">
+      </div>
+      <div class="col-5 c">
+        <h3 class="ordem-title">{{ order?.recipe?.title }}</h3>
+        <p class="order-description">{{ order?.recipe?.description }}</p>
+      </div>
+      <div class="col-4 d">
+        <div class="row btn-recipe">
+          <div class="col-4">
+            <div class="btn-circle btn-status d-flex justify-content-center align-items-center" data-toggle="collapse" href="#collapseExample"
+              aria-expanded="false" aria-controls="collapseExample">
+              <span> {{ order?.status }}</span>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="btn-circle btn-data d-flex justify-content-center align-items-center">
+              <span class="a"> {{ order?.data }}</span>
+            </div>
+          </div>
+          <div class="col-4">
+            <button (click)="openRecipe(order?.recipeId)" class="btn btn-circle btn-receipe d-flex justify-content-center align-items-center"
+              data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              <span class="a"> Ver
+                <br> Receitas</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

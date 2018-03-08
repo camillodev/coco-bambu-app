@@ -1,0 +1,31 @@
+<div class="login">
+  <form class="form">
+    <div class="form-container">
+      <div class="dialog" [style.visibility]="isDialog ? 'visible' : 'hidden'">
+        <div class="dialog-container">
+          <div class="order">
+            <span class="number"> {{pedidoNumber}} </span>
+            <br> Novo Pedido
+          </div>
+          <div class="message">
+            Por favor, faça o login para ver o pedido e ter acesso a receita com o modo de preparo.
+          </div>
+        </div>
+      </div>
+
+      <img class="brand" src="./assets/images/logo-coco-bambu.png" alt="">
+
+      <div class="input-container">
+        <div class="input">
+          <input class="input" placeholder="Nome do usuário" #username type="text">
+          <span class="icon icon-user"></span>
+        </div>
+        <div class="input">
+          <input class="input" placeholder="Senha" #password type="password">
+          <span class="icon icon-key"></span>
+        </div>
+        <button type="button" class="btn btn-send" (click)="login(username.value, password.value)">Acessar</button>
+      </div>
+    </div>
+  </form>
+</div>

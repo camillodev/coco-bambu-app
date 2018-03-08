@@ -1,0 +1,101 @@
+.search {
+  max-width: 300px;
+}
+
+.btn-search {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+}
+
+.icon-search {
+  top: -18px;
+  right: 5px;
+  content: url(/assets/images/icon-busca.png);
+}
+
+.row>div {
+  margin: auto 0px;
+  padding: 0;
+}
+
+.order-item {
+  padding: 15px 0 15px 0;
+  display: block;
+}
+
+.order-item>div {
+  min-width: 100%;
+}
+
+.order-img {
+  min-width: 100%;
+  margin-bottom: 20px;
+}
+
+.btn-recipe {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.btn-circle {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  display: block;
+  text-align: center;
+  float: right;
+}
+
+.btn-status {
+  background-color: #FFF;
+  color: green;
+}
+
+.btn-data {
+  background-color: #f2f2f2;
+  padding: 5px;
+}
+
+.btn-receipe {
+  background-color: #f87b1e;
+  color: #fff;
+  font-weight: 500;
+}
+
+.order-container {
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.title {
+  margin: 20px 0 20px 0;
+  font-size: 1.2rem;
+}
+
+.ordem-title {
+  font-size: 1.2rem;
+}
+
+.order-description {
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .order-item {
+    display: flex;
+  }
+  .order-item>div {
+    min-width: 0%;
+    max-width: 100%;
+  }
+  .order-img {
+    min-width: 0%;
+    max-width: 100%;
+  }
+  .search {
+    width: 600px;
+  }
+}

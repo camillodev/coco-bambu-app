@@ -1,0 +1,87 @@
+<section class="recipe" [ngStyle]="{'background-image': 'url(' + recipe?.imageUrl.big + ') '}">
+  <div class="btn btn-back" (click)="onBack()">
+    <i class="icon icon-back"></i>
+    <span class="icon-legend"> Voltar</span>
+  </div>
+  <div class="timer">
+    <div class="row">
+      <div class="col-4 time-icon">
+        <i class="icon icon-time"></i>
+      </div>
+      <div class="col-8 time">Tempo de Preparo
+        <br>
+        <p>{{recipe?.time}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="dialog" [style.visibility]="isDialog ? 'visible' : 'hidden'">
+    <div class="dialog-container">
+      <button type="button" class="close" (click)="closeDialog()" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="container">
+        <div class="dialog-title title">{{dialog.title}}</div>
+        <div class="message">
+          {{dialog.message}}
+        </div>
+        <button class="btn btn-notification" (click)="closeDialog()">{{dialog.buttonMessage}}</button>
+      </div>
+    </div>
+  </div>
+  <div class="recipe-info" [style.color]='infoColor'>
+    <h2 class="recipe-title">
+      {{recipe?.title}}
+    </h2>
+    <p class="recipe-description">
+      {{recipe?.description}}
+    </p>
+  </div>
+</section>
+<section class="ingredients">
+  <div class="container">
+    <h2 class="title">Ingredientes</h2>
+    <ul #ingredientList>
+      <li #item class="btn-list" *ngFor="let ingredient of recipe?.ingredients">
+        <label class="checky round">
+          <input type="checkbox">
+          <span></span>
+          <span class="check-item">{{ ingredient }}</span>
+        </label>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class="preparation">
+  <div class="container">
+    <h2 class="title">Modo de Preparo</h2>
+    <ul #preparationList>
+      <li class="btn-list" *ngFor="let preparation of recipe?.preparation">
+        <label class="checky round">
+          <input type="checkbox">
+          <span></span>
+          <span class="preparation-item check-item">
+            <div class="list-title">Passo {{ preparation.order }}</div>
+            <div class="preparation-description">{{ preparation.description }}</div>
+          </span>
+        </label>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class="status">
+  <div class="container">
+    <div class="row status-line">
+      <div class="status-item col-9">
+        <div class="status-description">
+          Status 30% pronto e 0 minuto(s) utilizado(s)
+        </div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+      </div>
+      <div class="col-2 status-item">
+        <button class="btn btn-send" (click)="openDialog()">Iniciar Preparação</button>
+      </div>
+    </div>
+  </div>
+</section>
