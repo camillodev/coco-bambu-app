@@ -2,7 +2,7 @@
   "name": "coco-bambu-app",
   "version": "1.0.0",
   "description": "Aplicação para um restaurante ajudar os chefs na cozinha feito em Angular 5",
-  "author": "camillodeveloper",}
+  "author": "camillodeveloper",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
